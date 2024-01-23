@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,12 +8,28 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <div><center><h1 class="fw-bold ">Pokedex</h1></center></div>
+    <div>
+        <center><img width="200" src="./img/Logo-Pokemon.png" alt="Pokemon"></center>
+    </div>
     
-    <div class="p-3 mb-2 bg-primary text-white rounded box"></div>
+    <div class="container">
+        <button onclick="GetPokemonInfo()">Buscar Pokémon</button>
+        <button onclick="GetAbilities()">Buscar Habilidades</button>
+        <button onclick="GetMoves()">Buscar Movimientos</button>
+
+        <div id="result">
+            <img width="100" id="pokemonImage" src="./img/kawax-pokeball-3097.webp" alt="Imagen del Pokémon">
+            <p id="pokemonInfo"></p>
+        </div>
+    </div>
     
-    <div><center><p class="fixed-bottom">Creado por Juan Pablo Bueno y Fernando Machado</p></center></div>
-       
+    <div class="fixed-bottom">
+        <font size="1">
+            <center><p class="fixed-bottom">©Creado por Juan Pablo Bueno y Fernando Machado</p></center>
+        </font>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
