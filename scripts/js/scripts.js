@@ -23,7 +23,7 @@ function FetchData(endpoint, callback) {
 /**Setea los elementos de la interfaz con los resultados brindados al buscarse un pokemon */
 function DisplayPokemonInfo(name, imageUrl, description) {
     pokemonImage.src = imageUrl;
-    pokemonInfo.innerText = `Nombre: ${name}\nDescripción: ${description}`;
+    pokemonInfo.innerText = `Nombre: ${CapitalizeWords(name)}\nDescripción: ${description}`;
 }
 
 /**Setea los elementos de la interfaz con los resultados brindados al buscarse una habilidad */
@@ -40,6 +40,11 @@ function DisplayMoveInfo(name, effect, accuracy, power) {
     GetTranslatedEffect(name, 'move', effect, (translatedEffect) => {
         pokemonInfo.innerText = `Movimiento: ${name}\nAcierto: ${accuracy}\nDaño Base: ${power}\nEfecto: ${translatedEffect}`;
     });
+}
+
+/**Función rara robada de internet que te modifica los nombres de los textos agregando mayúxculas y quitando espacios al inicio y final */
+function CapitalizeWords(str) {
+    return str.replace(/\b\w/g, (l) => l.toUpperCase()).replace(/_|-/g, ' ').trim();
 }
 
 /**Consigue la información para setear los elementos de la interfaz, asignandole un idioma y usando como estandar el español */
@@ -61,8 +66,7 @@ function GetPokemonDescription(flavorTextEntries, languageCode) {
     return translation ? translation.flavor_text : null;
 }
 
-/**Consigue mediante el nombre o el id la información e imagen de un pokemon, buscando una descipción en español
-*/
+/**Consigue mediante el nombre o el id la información e imagen de un pokemon, buscando una descipción en español*/
 function GetPokemonInfo() {
     const pokemonName = prompt('Ingrese el nombre o número del Pokémon:');
     if (pokemonName) {
