@@ -1,8 +1,11 @@
+//#region Variables
 const apiUrl = 'https://pokeapi.co/api/v2/';
 
 let pokemonImage;
 let pokemonInfo;
+//#endregion
 
+//#region Proceso de inicio 
 document.addEventListener('DOMContentLoaded', (e) => {
     SetHUD();
 });
@@ -11,6 +14,7 @@ function SetHUD() {
     pokemonImage = document.getElementById('pokemonImage');
     pokemonInfo = document.getElementById('pokemonInfo');
 }
+//#endregion
 
 /**Realiza un fetch a partir de la raíz de la pokeapi adicionando la extensión deseada y ejecutando una función con el resultado */
 function FetchData(endpoint, callback) {
@@ -30,7 +34,7 @@ function DisplayPokemonInfo(name, imageUrl, description) {
 function DisplayAbilityInfo(name, effect) {
     pokemonImage.src = './img/kawax-pokeball-3097.webp'; 
     GetTranslatedEffect(name, 'ability', effect, (translatedEffect) => {
-        pokemonInfo.innerText = `Habilidad: ${name}\nEfecto: ${translatedEffect}`;
+        pokemonInfo.innerText = `Habilidad: ${CapitalizeWords(name)}\nEfecto: ${translatedEffect}`;
     });
 }
 
@@ -38,7 +42,7 @@ function DisplayAbilityInfo(name, effect) {
 function DisplayMoveInfo(name, effect, accuracy, power) {
     pokemonImage.src = './img/kawax-pokeball-3097.webp'; 
     GetTranslatedEffect(name, 'move', effect, (translatedEffect) => {
-        pokemonInfo.innerText = `Movimiento: ${name}\nAcierto: ${accuracy}\nDaño Base: ${power}\nEfecto: ${translatedEffect}`;
+        pokemonInfo.innerText = `Movimiento: ${CapitalizeWords(name)}\nAcierto: ${accuracy}\nDaño Base: ${power}\nEfecto: ${translatedEffect}`;
     });
 }
 

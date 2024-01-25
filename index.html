@@ -8,26 +8,28 @@
     <title>Pokedex</title>
 </head>
 <body>
-    <div>
-        <center><img width="200" src="./img/Logo-Pokemon.png" alt="Pokemon"></center>
+    <div class="fixed-top">
+        <center>
+            <img width="200" src="./img/Logo-Pokemon.png" alt="Pokemon">
+        </center>
     </div>
     
-    <div class="container">
+    <div class="container my-container">
         <button onclick="GetPokemonInfo()">Buscar Pokémon</button>
         <button onclick="GetAbilities()">Buscar Habilidades</button>
         <button onclick="GetMoves()">Buscar Movimientos</button>
-
+    
         <div id="result">
             <img width="100" id="pokemonImage" src="./img/kawax-pokeball-3097.webp" alt="Imagen del Pokémon">
             <p id="pokemonInfo"></p>
         </div>
     </div>
   
-    <div class="fixed-bottom">
+    <footer>
         <font size="1">
             <center><p class="fixed-bottom">©Creado por Juan Pablo Bueno y Fernando Machado</p></center>
         </font>
-    </div>
+    </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/js/scripts.js"></script>
