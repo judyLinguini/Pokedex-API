@@ -7,6 +7,7 @@ let pokemonInfo;
 
 //#region Proceso de inicio 
 document.addEventListener('DOMContentLoaded', (e) => {
+    UpdatePokemonList();
     SetHUD();
 });
 
@@ -15,6 +16,21 @@ function SetHUD() {
     pokemonInfo = document.getElementById('pokemonInfo');
 }
 //#endregion
+
+/**Crea una lista con los nombres de los pokemon para poder buscarlos */
+function UpdatePokemonList() {
+    fetch(apiUrl + 'pokemon?limit=1017')
+        .then(response => response.json())
+        .then(data => {
+            const pokemonList = document.getElementById('pokemonList');
+            data.results.forEach(pokemon => {
+                const option = document.createElement('option');
+                option.value = pokemon.name;
+                pokemonList.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error fetching Pokemon list: ', error));
+}
 
 /**Realiza un fetch a partir de la raíz de la pokeapi adicionando la extensión deseada y ejecutando una función con el resultado */
 function FetchData(endpoint, callback) {

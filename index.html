@@ -13,26 +13,27 @@
             <img width="200" src="./img/Logo-Pokemon.png" alt="Pokemon">
         </center>
     </div>
-    
+
     <div class="container my-container">
-        <input type="text" id="searchInput" placeholder="Ingrese el nombre o número" class="form-control">
+        <input type="text" id="searchInput" placeholder="Ingrese el nombre o número" class="form-control" list="pokemonList">
+        <datalist id="pokemonList"></datalist>
 
         <button class="btn btn-primary" onclick="GetPokemonInfo()">Buscar Pokémon</button>
         <button class="btn btn-primary" onclick="GetAbilities()">Buscar Habilidades</button>
         <button class="btn btn-primary" onclick="GetMoves()">Buscar Movimientos</button>
-    
+
         <div id="result">
             <img width="100" id="pokemonImage" src="./img/kawax-pokeball-3097.webp" alt="Imagen del Pokémon">
             <p id="pokemonInfo"></p>
         </div>
     </div>
-  
+
     <footer>
         <font size="1">
             <center><p class="fixed-bottom">©Creado por Juan Pablo Bueno y Fernando Machado</p></center>
         </font>
     </footer>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./scripts/js/scripts.js"></script>
 </body>
