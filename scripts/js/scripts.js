@@ -72,7 +72,7 @@ function GetPokemonDescription(flavorTextEntries, languageCode) {
 
 /**Consigue mediante el nombre o el id la información e imagen de un pokemon, buscando una descipción en español*/
 function GetPokemonInfo() {
-    const pokemonName = prompt('Ingrese el nombre o número del Pokémon:');
+    const pokemonName = document.getElementById('searchInput').value;
     if (pokemonName) {
         FetchData(`pokemon-species/${pokemonName.toLowerCase()}`, (speciesData) => {
             const name = speciesData.name;
@@ -87,7 +87,7 @@ function GetPokemonInfo() {
 
 /**Consigue mediante el nombre o el id la información de una habilidad, buscando la descripción en español */
 function GetAbilities() {
-    const abilityName = prompt('Ingrese el nombre de la habilidad:');
+    const abilityName = document.getElementById('searchInput').value;
     if (abilityName) {
         FetchData(`ability/${abilityName}`, (data) => {
             const name = data.name;
@@ -99,7 +99,7 @@ function GetAbilities() {
 
 /**Consigue mediante el nombre o el id la información de un movimiento, buscando la descripción en español */
 function GetMoves() {
-    const moveName = prompt('Ingrese el nombre del movimiento:');
+    const moveName = document.getElementById('searchInput').value;
     if (moveName) {
         FetchData(`move/${moveName}`, (data) => {
             const name = data.name;

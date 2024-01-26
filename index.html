@@ -15,9 +15,11 @@
     </div>
     
     <div class="container my-container">
-        <button onclick="GetPokemonInfo()">Buscar Pokémon</button>
-        <button onclick="GetAbilities()">Buscar Habilidades</button>
-        <button onclick="GetMoves()">Buscar Movimientos</button>
+        <input type="text" id="searchInput" placeholder="Ingrese el nombre o número" class="form-control">
+
+        <button class="btn btn-primary" onclick="GetPokemonInfo()">Buscar Pokémon</button>
+        <button class="btn btn-primary" onclick="GetAbilities()">Buscar Habilidades</button>
+        <button class="btn btn-primary" onclick="GetMoves()">Buscar Movimientos</button>
     
         <div id="result">
             <img width="100" id="pokemonImage" src="./img/kawax-pokeball-3097.webp" alt="Imagen del Pokémon">
